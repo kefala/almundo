@@ -2,9 +2,12 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/css/vendor.css')
+    link(rel='stylesheet', href='/css/dev.css')
     meta(name='viewport',content='width=device-width, initial-scale=1')
-  body
+    link(rel="shortcut icon" href="http://static.almundo.com/img/almundo-iso.png", type="image/x-icon")
+    link(rel="icon" href="http://static.almundo.com/img/almundo-iso.png", type="image/x-icon")
+  body(ng-cloak)
     block content
     script(src="/js/vendor.js")
     script(src="/js/generics.js")

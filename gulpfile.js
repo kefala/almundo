@@ -7,10 +7,10 @@ var paths = {
                 'src/Core/runs.js',
                 'src/Core/configs.js',
                 'src/**/Routes/*.js',
-                'src/**/Factories/*.js',
-                'src/**/Controllers/*.js',
                 'src/Directives/**/*.js',
                 'src/**/Directives/*.js',   
+                'src/**/Factories/*.js',
+                'src/**/Controllers/*.js',
             ],
             test: [
                'src/Core/tests.js',  

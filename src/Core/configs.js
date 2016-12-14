@@ -1,11 +1,10 @@
 angular
     .module('almundo')
-    .config(['$httpProvider', '$stateProvider', '$urlRouterProvider', function ($httpProvider, $stateProvider, $urlRouterProvider) {
+    .config(['$httpProvider', '$stateProvider', '$urlRouterProvider', '$mdThemingProvider', 
+    	function ($httpProvider, $stateProvider, $urlRouterProvider, $mdThemingProvider) {
         $urlRouterProvider.otherwise('/');
-        
-        $stateProvider
-            .state('home', {
-                url: "/",
-                template: 'Facha'
-            });
+
+        $mdThemingProvider.theme('default')
+		    .primaryPalette('orange')
+		    .accentPalette('blue');
     }]);
