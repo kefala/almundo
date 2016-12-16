@@ -3,18 +3,14 @@
 </div>
 
 <md-content>
-
     <menu></menu>    
-
     <div class="list">
-
         <md-list>
-            <md-list-item class="md-3-line" ng-repeat="item in vm.todos">
+            <md-list-item class="md-2-line" ng-repeat="item in vm.todos">
                 <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar">
 
                 <div class="md-list-item-text">
                     <h3>{{item.what}}</h3>
-                    <h4>{{item.who}}</h4>
                     <p>
                         {{item.notes}}
                     </p>
@@ -22,7 +18,20 @@
                 <md-divider inset></md-divider>
             </md-list-item>
         </md-list>
-
     </div>
 </md-content>
 
+<div class="inputs" layout="row">
+    <md-input-container flex="50">
+        <label>Nombre del hotel</label>
+        <input required name="name" ng-model="vm.hotel.name">
+    </md-input-container>
+    <md-input-container flex="50">
+        <label>Reseña del hotel</label>
+        <input required name="review" ng-model="vm.hotel.review">
+    </md-input-container>
+</div>
+
+<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+    <md-button class="md-raised md-primary">Agregar</md-button>
+</section>

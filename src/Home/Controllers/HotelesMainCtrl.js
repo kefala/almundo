@@ -16,9 +16,9 @@ function HotelesMainCtrl(HotelesFactory) {
     for (var i = 0; i < 15; i++) {
     	vm.todos.push({
     		face: imagePath,
-    		what: "Brunch this weekend?",
-    		who: "Min Li Chan",
-    		notes: "I'll be in your neighborhood doing errands."
+    		what: "Hotelsiño del placer",
+    		who: "Viva un fin de semandiño increible",
+    		notes: "Aceptamos tarjetiña de creditiño"
     	});
     }
 }

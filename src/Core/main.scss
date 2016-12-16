@@ -9,6 +9,7 @@ ui-view {
 	width: 600px;
 	margin: auto;
 	max-width: 100%;
+	margin-bottom: 10px;
 }  
 
 .logo-box {
@@ -26,6 +27,6 @@ ui-view {
 @media (max-width: 600px) {
 	.list {
 		height: auto;
-		margin-bottom: 0px!important;
+		margin-bottom: 10px!important;
 	}
 }
