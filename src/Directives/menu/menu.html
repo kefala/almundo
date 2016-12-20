@@ -1,7 +1,11 @@
-<md-toolbar md-scroll-shrink ng-if="true">
+	
+<md-toolbar md-scroll-shrink>
 	<div class="md-toolbar-tools">
+		<md-button class="md-icon-button" aria-label="Settings" ng-if="vm.sideBar" ng-click="vm.toogle()">
+			<i class="material-icons">menu</i>
+		</md-button>
 		<h3>
-			<span>Hoteles en serio - Brasil</span>
+			<span>Hoteles en serio - Brasil {{vm.texto}}</span>
 		</h3>
 	</div>
 </md-toolbar>

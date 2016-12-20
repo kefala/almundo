@@ -8,7 +8,7 @@ function HotelesFactory($http, $rootScope) {
                     'Content-Type': 'application/json'
                 },
                 method: 'GET',
-                url: $rootScope.apiHost + '/hoteles' 
+                url: $rootScope.apiHost + '/api//hotel' 
             });
         }
     };

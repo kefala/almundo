@@ -1,32 +1,28 @@
 html, body, ui-view {
-	//height: 100%;
 	margin: 0;
 	padding: 0;
-	background-color: #FFF;
 }
+
 ui-view {
 	display: block;
-	width: 600px;
+	width: 100%;
 	margin: auto;
 	max-width: 100%;
-	margin-bottom: 10px;
+	height: 100%;
+	.filters {
+		padding: 10px 10px;
+		border-right: 1px solid #CCC;
+	}
+	.menu-side {
+		padding: 10px;
+	}
 }  
 
-.logo-box {
-	text-align: center;
-}
-
-.logo-box img {
-	height: 200px;
-}
-
-.list {
-	height: 400px;
-}
-
 @media (max-width: 600px) {
-	.list {
-		height: auto;
-		margin-bottom: 10px!important;
+	ui-view {
+		.list {
+			height: auto;
+			margin-bottom: 10px!important;
+		}
 	}
 }
