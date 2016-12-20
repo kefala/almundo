@@ -28,13 +28,13 @@ function HotelesMainCtrl(HotelesFactory, $state) {
     function deleteHotel(hotel) {
 
         HotelesFactory.delete(hotel).then(function done() {
-            console.log("Borro");
             if (hotels.indexOf(hotel) !== -1) {
                 hotels.splice(hotels.indexOf(hotel), 1);
             }
             if (vm.hotels.indexOf(hotel) !== -1) {
                 vm.hotels.splice(vm.hotels.indexOf(hotel), 1);
             }
+            verifyIfHaveToShow();
         }, function err(data) {
             console.log(data);
         });
