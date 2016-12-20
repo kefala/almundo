@@ -24,16 +24,14 @@
         </md-sidenav>
 
         <md-content flex layout-padding>
-
             <div layout="column">
                 <md-list>
-                    <md-list-item class="md-2-line" ng-repeat="item in vm.hotels">
+                    <md-list-item class="md-3-line" ng-repeat="item in vm.hotels">
                         <i class="material-icons md-avatar-icon">hotel</i>
                         <div class="md-list-item-text">
-                            <h3>{{item.name}}</h3>
-                            <p>
-                                {{item.description}}
-                            </p>
+                            <h3 ng-click="vm.goToEditHotel(item)" class="hotel-name">{{item.name}} - AR${{item.price}}</h3>
+                            <h4>{{item.description}}</h4>
+                            <p>Rankinsiño: {{item.stars}}/5</p>
                         </div>
                         <md-button class="md-secondary md-icon-button" ng-click="vm.deleteHotel(item)">
                             <i class="material-icons">delete</i>
@@ -45,7 +43,6 @@
             <div layout="column" ng-if="vm.isNevahToShow">
                 Ups! No tenemos hotelsiños para mostrar
             </div>
-
         </md-content>
 
     </section>

@@ -20,13 +20,18 @@ function HotelesMainCtrl(HotelesFactory, $state) {
     vm.onStarsFilterChange = onStarsFilterChange;
     vm.goToAddHotel = goToAddHotel;
     vm.deleteHotel = deleteHotel;
+    vm.goToEditHotel = goToEditHotel;
 
     function goToAddHotel() {
         $state.go("newHotel");
     }
 
-    function deleteHotel(hotel) {
+    function goToEditHotel(hotel) {
+        console.log(hotel._id);
+        $state.go("editHotel", {hotelId: hotel._id});
+    }
 
+    function deleteHotel(hotel) {
         HotelesFactory.delete(hotel).then(function done() {
             if (hotels.indexOf(hotel) !== -1) {
                 hotels.splice(hotels.indexOf(hotel), 1);
