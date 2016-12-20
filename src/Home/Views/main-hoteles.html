@@ -17,6 +17,10 @@
                 <md-slider flex min="0" max="5" md-discrete ng-model="vm.filters.stars" ng-change="vm.onStarsFilterChange()" aria-label="stars" id="stars-slider"></md-slider>
                 <span>{{vm.filters.stars}}/5</span>
             </md-slider-container>
+
+            <div>                
+                <md-button ng-click="vm.goToAddHotel()">Agregar hotelsiño</md-button>   
+            </div>
         </md-sidenav>
 
         <md-content flex layout-padding>
@@ -31,6 +35,9 @@
                                 {{item.description}}
                             </p>
                         </div>
+                        <md-button class="md-secondary md-icon-button" ng-click="vm.deleteHotel(item)">
+                            <i class="material-icons">delete</i>
+                        </md-button>
                         <md-divider inset></md-divider>
                     </md-list-item>
                 </md-list>

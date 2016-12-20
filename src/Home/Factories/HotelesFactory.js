@@ -8,7 +8,32 @@ function HotelesFactory($http, $rootScope) {
                     'Content-Type': 'application/json'
                 },
                 method: 'GET',
-                url: $rootScope.apiHost + '/api//hotel' 
+                url: $rootScope.apiHost + '/api/hotel' 
+            });
+        },
+        delete: function (data) {
+            console.log(data._id);
+            return $http({
+                cache: false,
+                responseType: 'json',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'DELETE',
+                url: $rootScope.apiHost + '/api/hotel/' + data._id
+            });
+        },
+        save: function (data) {
+            console.log(data);
+            return $http({
+                cache: false,
+                responseType: 'json',
+                data: data,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST',
+                url: $rootScope.apiHost + '/api/hotel' 
             });
         }
     };
@@ -17,5 +42,5 @@ function HotelesFactory($http, $rootScope) {
 }
 
 angular
-    .module('almundo')
-    .factory('HotelesFactory', ['$http', '$rootScope', HotelesFactory]);
+.module('almundo')
+.factory('HotelesFactory', ['$http', '$rootScope', HotelesFactory]);

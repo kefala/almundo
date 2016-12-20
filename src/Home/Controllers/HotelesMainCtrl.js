@@ -10,7 +10,7 @@ function filter(hotels, price, stars) {
 }
 
 
-function HotelesMainCtrl(HotelesFactory) {
+function HotelesMainCtrl(HotelesFactory, $state) {
 	var vm = this;
     vm.hotels = [];
     hotels = [];
@@ -18,6 +18,27 @@ function HotelesMainCtrl(HotelesFactory) {
     vm.isNevahToShow = false;
     vm.onPriceFilterChange = onPriceFilterChange;
     vm.onStarsFilterChange = onStarsFilterChange;
+    vm.goToAddHotel = goToAddHotel;
+    vm.deleteHotel = deleteHotel;
+
+    function goToAddHotel() {
+        $state.go("newHotel");
+    }
+
+    function deleteHotel(hotel) {
+
+        HotelesFactory.delete(hotel).then(function done() {
+            console.log("Borro");
+            if (hotels.indexOf(hotel) !== -1) {
+                hotels.splice(hotels.indexOf(hotel), 1);
+            }
+            if (vm.hotels.indexOf(hotel) !== -1) {
+                vm.hotels.splice(vm.hotels.indexOf(hotel), 1);
+            }
+        }, function err(data) {
+            console.log(data);
+        });
+    }
 
     function onPriceFilterChange() {
         vm.hotels = filter(hotels, vm.filters.price, vm.filters.stars);
@@ -49,4 +70,4 @@ function HotelesMainCtrl(HotelesFactory) {
 
 angular
 .module('almundo')
-.controller('HotelesMainCtrl', ['HotelesFactory', HotelesMainCtrl]);
+.controller('HotelesMainCtrl', ['HotelesFactory', '$state',HotelesMainCtrl]);

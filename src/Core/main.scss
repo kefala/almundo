@@ -16,6 +16,15 @@ ui-view {
 	.menu-side {
 		padding: 10px;
 	}
+	.inputs {
+		margin: auto;
+		width: 100%;
+		max-width: 500px;
+		padding: 15px;
+		.box-buttons {
+			text-align: center;
+		}
+	}
 }  
 
 @media (max-width: 600px) {

@@ -1,5 +1,3 @@
-
-
 function MenuDirectiveCtrl($mdSidenav) {
 	function toogle() {
 		if (this.sideBar) {
@@ -10,9 +8,6 @@ function MenuDirectiveCtrl($mdSidenav) {
 
 	var vm = this;
 	vm.toogle = toogle;
-	console.log(vm.sideBar);
-
-
 }
 
 function MenuDir() {	
