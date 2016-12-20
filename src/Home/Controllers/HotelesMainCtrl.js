@@ -9,7 +9,6 @@ function filter(hotels, price, stars) {
     return hotelsFiltered;
 }
 
-
 function HotelesMainCtrl(HotelesFactory, $state) {
 	var vm = this;
     vm.hotels = [];
@@ -27,7 +26,6 @@ function HotelesMainCtrl(HotelesFactory, $state) {
     }
 
     function goToEditHotel(hotel) {
-        console.log(hotel._id);
         $state.go("editHotel", {hotelId: hotel._id});
     }
 

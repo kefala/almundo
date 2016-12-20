@@ -10,7 +10,6 @@ function EditHotelCtrl(HotelesFactory, $state, $stateParams) {
         vm.hotel.description    = data.data.description;
         vm.hotel.price          = data.data.price;
         vm.hotel.stars          = data.data.stars;
-        console.log(data);
     }, function err(data) {
         console.log(data);
     });
@@ -23,7 +22,6 @@ function EditHotelCtrl(HotelesFactory, $state, $stateParams) {
     }
 
     function onSubmit() {
-        console.log(vm.hotel);
         HotelesFactory.update(vm.hotel).then(function done() {
             $state.go("hoteles");
         }, function err(data) {

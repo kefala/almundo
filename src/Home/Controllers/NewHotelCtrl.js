@@ -15,7 +15,6 @@ function NewHotelCtrl(HotelesFactory, $state) {
     }
 
     function onSubmit() {
-        console.log(vm.hotel);
         HotelesFactory.save(vm.hotel).then(function done() {
             $state.go("hoteles");
         }, function err(data) {

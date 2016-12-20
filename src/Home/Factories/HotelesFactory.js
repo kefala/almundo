@@ -23,7 +23,6 @@ function HotelesFactory($http, $rootScope) {
             });
         },
         delete: function (data) {
-            console.log(data._id);
             return $http({
                 cache: false,
                 responseType: 'json',
@@ -35,7 +34,6 @@ function HotelesFactory($http, $rootScope) {
             });
         },
         update: function (data) {
-            console.log(data);
             return $http({
                 cache: false,
                 responseType: 'json',
@@ -48,7 +46,6 @@ function HotelesFactory($http, $rootScope) {
             });
         },
         save: function (data) {
-            console.log(data);
             return $http({
                 cache: false,
                 responseType: 'json',

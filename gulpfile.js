@@ -11,10 +11,6 @@ var paths = {
                 'src/**/Directives/*.js',   
                 'src/**/Factories/*.js',
                 'src/**/Controllers/*.js',
-            ],
-            test: [
-               'src/Core/tests.js',  
-               'src/**/Test/*.js',  
             ]
         },
 
@@ -71,9 +67,6 @@ var autoprefixer = require('gulp-autoprefixer');
 //html
 var rename = require('gulp-rename');
 var minifyHTML = require('gulp-minify-html');
-//fonts
-//test
-//var Server = require('karma').Server;
 
 /*------------------------------------------------------------------------------------------------*/
 
@@ -98,19 +91,6 @@ gulp.task('vendorScripts', function () {
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest('public/js/'));
 });
-/*
-gulp.task('concatJs', function () {
-    return gulp.src(['dist/vendor.js', 'dist/dev.js'])
-        .pipe(concat('main.js'))
-        .pipe(gulp.dest('dist/'));
-});
-
-
-gulp.task('cleanConcatJs', function () {
-    gulp.src(['dist/vendor.js', 'dist/dev.js'])
-        .pipe(clean({ force: true }));
-});
-*/
 
 /*------------------------------------------------------------------------------------------------*/
 
@@ -173,18 +153,6 @@ gulp.task('moveViews', function () {
         .pipe(gulp.dest('public/components/'));
 });
 
-/*------------------------------------------------------------------------------------------------*/
-
-/*  TEST TASK 
-
-gulp.task('test', function (done) {
-    new Server({
-        configFile: __dirname + '/test.js',
-        singleRun: true
-    }, done).start();
-});
-
-/*------------------------------------------------------------------------------------------------*/
 
 /*  FONTS TASK */
 
@@ -201,31 +169,9 @@ gulp.task('moveFonts', function () {
 gulp.task('default', function () {
     runSequence(
         ['lint', 'vendorScripts','genericsScripts', 'moveDirectives', 'moveViews', 'vendorCss', 'devCss']
-        /*
-        ['lint','vendorScripts','devScripts', 'vendorCss', 'devCss', 'moveDirectives', 'moveViews', 'moveFonts'],
-        ['concatJs', 'concatCss'],
-        ['cleanConcatJs', 'cleanConcatCss', 'test']
-        */
-
-    );
-});
-/*
-gulp.task('scripts', function() {
-  runSequence(
-    ['lint','vendorScripts','devScripts'],
-    ['concatJs'],
-    ['cleanConcatJs']
     );
 });
 
-gulp.task('styles', function() {
-  runSequence(
-    ['vendorCss', 'devCss'],
-    ['concatCss'],
-    ['cleanConcatCss']
-    );
-});
-*/
 gulp.task('watch', function () {
     var arrayCss = [];
     arrayCss = arrayCss.concat(paths.css.dev);
